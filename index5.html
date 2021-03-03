@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Please check console</h1>
+    <Script>
+        var invokevalue = 0;
+        var instancevalue = 0;
+
+         function age (current){
+             this.current = current;
+             instancevalue += 1;
+         }
+
+         age.prototype.getFull = function () {
+             invokevalue += 1;
+             return this.current;
+         };
+         var a = new age(22);
+         var a1 = new age(26);
+         var a2 = new age(20);
+
+
+         console.log(a.getFull());
+         console.log(a1.getFull());
+         console.log(a2.getFull());
+         console.log("total no of invokation:" + invokevalue);
+         console.log("total no of instances:" + instancevalue);
+
+
+    </Script>
+</body>
+</html>
